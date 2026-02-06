@@ -23,6 +23,7 @@ class WhatsAppHandler {
             }),
             puppeteer: {
                 headless: true,  // Must be true for cloud/Docker (no display)
+                userDataDir: './data/chrome-profile',  // Separate Chrome profile in mounted volume
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
