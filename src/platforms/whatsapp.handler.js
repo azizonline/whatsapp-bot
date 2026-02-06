@@ -22,7 +22,7 @@ class WhatsAppHandler {
                 dataPath: config.paths.sessions,
             }),
             puppeteer: {
-                headless: false,  // Show browser window for easier login
+                headless: true,  // Must be true for cloud/Docker (no display)
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
@@ -30,6 +30,8 @@ class WhatsAppHandler {
                     '--disable-accelerated-2d-canvas',
                     '--no-first-run',
                     '--disable-gpu',
+                    '--single-process',
+                    '--no-zygote',
                 ],
             },
         });
