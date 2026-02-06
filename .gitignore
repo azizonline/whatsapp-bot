@@ -1,0 +1,28 @@
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+
+# Dependencies
+node_modules/
+
+# Session data (contains auth)
+data/sessions/
+
+# Firebase credentials (sensitive!)
+firebase-serviceAccount.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Delivered accounts log (keep for records but don't commit)
+# data/delivered/
