@@ -19,11 +19,10 @@ class WhatsAppHandler {
 
         this.client = new Client({
             authStrategy: new LocalAuth({
-                dataPath: config.paths.sessions,
+                dataPath: './data/sessions',  // Use relative path for Docker volume mount
             }),
             puppeteer: {
                 headless: true,  // Must be true for cloud/Docker (no display)
-                userDataDir: './data/chrome-profile',  // Separate Chrome profile in mounted volume
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
@@ -33,6 +32,7 @@ class WhatsAppHandler {
                     '--disable-gpu',
                     '--single-process',
                     '--no-zygote',
+                    '--disable-features=IsolateOrigins,site-per-process',
                 ],
             },
         });
